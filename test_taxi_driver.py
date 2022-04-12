@@ -2,21 +2,6 @@ import time
 from SearchAlgorithms import AEstrela
 from TaxiDriverProblem import TaxiDriver
 import numpy as np
-import gym
-
-env = gym.make("Taxi-v3").env
-M = np.zeros((env.desc.shape[0],env.desc.shape[1]))
-M = M.astype(str)
-points = ["R", "G", "B", "Y"]
-letters = []
-for i in range(env.desc.shape[0]):
-    for j in range(env.desc.shape[1]):
-        M[i,j] = env.desc[i,j].decode('UTF-8')
-        if M[i,j] in points:
-            letters.append([i,j])
-start = [1,6]
-M[start[0],start[1]] = '0'
-map = env.desc
 
 def test1():
     passenger = [1,0]
